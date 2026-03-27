@@ -1,0 +1,32 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    font-size: 120px;
+    color: #ccc;
+    position: relative;
+    font-family: Verdana, sans-serif;
+}
+
+h1:before {
+    position: absolute;
+    content: 'TEXT';
+    top: 0;
+    left: 0;
+    width: 0;
+    color: #262626;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+h1:hover:before {
+    width: 100%;
+}
