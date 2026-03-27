@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #212121;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+.fig {
+    width: 500px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fig img {
+    width: 100%;
+}
+
+.fig h3, .fig h5 {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.fig h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.fig h5 {
+    background-color: #ae895d;
+    padding: 3px;
+}
+
+.fig .caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(-20px);
+    transition: all 0.25s;
+    opacity: 0;
+}
+
+.fig:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #006266;
+    opacity: 0.5;
+    transition: all 0.25s;
+    transform: translateY(100%);
+    transition-delay: 0.25s;
+}
+
+.fig:hover .caption {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.fig:hover:before {
+    transition-delay: 0s;
+    transform: translateY(0);
+}
