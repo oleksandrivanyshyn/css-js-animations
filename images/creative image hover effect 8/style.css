@@ -1,0 +1,117 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: 'Lato', sans-serif;
+   background-color: #272727;
+}
+
+.container {
+   width: 450px;
+   height: 300px;
+   position: relative;
+}
+
+.container img {
+   width: 100%;
+}
+
+.container:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: '';
+  background-color: #2d3436;
+  opacity: 0.8;
+}
+
+.caption {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   color: white;
+   text-transform: uppercase;
+}
+
+h2 {
+   text-align: center;
+   font-size: 17px;
+   padding: 20px;
+   margin-top: 20px;
+   background: rgba(0, 0, 0, 0.8);
+}
+
+p {
+   font-size: 16px;
+   width: 80%;
+   align-self: center;
+   text-align: center;
+}
+
+a {
+   text-decoration: none;
+   background: #000;
+   color: #fff;
+   width: 100px;
+   padding: 15px;
+   margin-bottom: 20px;
+   align-self: center;
+}
+
+/* OUR EFFECT STYLES GOES HERE */
+.container:before {
+  transform: translate(650px, -100px) rotate(180deg);
+  transition: all 0.2s;
+}
+
+.container:hover:before {
+  transform: translate(0, 0) rotate(0deg);
+}
+
+h2 {
+  transform: translateY(-150px);
+  transition: all 0.2s;
+}
+
+.container:hover h2 {
+  transform: translateY(0px);
+  transition-delay: 0.5s;
+}
+
+
+p {
+  transform: translateX(300px) rotate(90deg);
+  transition: all 0.2s;
+}
+
+.container:hover p {
+  transform: translateX(0) rotate(0deg);
+  transition-delay: 0.4s;
+}
+
+a {
+  transform: translateY(-300px);
+  transition: all 0.2s;
+}
+
+.container:hover a {
+  transform: translateY(0px);
+  transition-delay: 0.3s;
+}
+
+.container {
+  overflow: hidden;
+}
