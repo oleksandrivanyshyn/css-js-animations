@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+ul {
+    position: relative;
+}
+
+ul li {
+    list-style: none;
+    text-align: center;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    font-size: 3em;
+    padding: 5px 20px;
+    display: inline-flex;
+    font-weight: 700;
+    transition: 0.5s;
+}
+
+ul:hover a {
+    color: #0002;
+}
+
+ul li a:hover {
+    color: #000;
+    background: #fff;
+}
+
+a:before {
+    content: "hover";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 5em;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 500px;
+    opacity: 0;
+    transition: letter-spacing 0.5s;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+a:hover:before {
+    content: attr(data-text);
+    letter-spacing: 10px;
+    opacity: 1;
+}
+
+li:nth-child(1) a:before {
+    background: #81ecec;
+}
+
+ul li:nth-child(2) a:before {
+    background: #ff7675;
+}
+
+ul li:nth-child(3) a:before {
+    background: #55efc4;
+}
+
+ul li:nth-child(4) a:before {
+    background: #a29bfe;
+}
+
+ul li:nth-child(5) a:before {
+    background: #fd79a8;
+}
