@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    background-color: #21233c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    height: 31em;
+    width: 31em;
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.letter {
+    font-size: 3.5em;
+}
+
+.orbit {
+    position: relative;
+    height: 18.75em;
+    width: 18.75em;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin 8s linear infinite;
+}
+
+.orbit p {
+    position: absolute;
+    top: 4.7em;
+    left: 2em;
+    font-size: 3.5em;
+
+}
+
+.moon {
+    height: 8em;
+    width: 8em;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    box-shadow: 0 0 0.6em #fff;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
