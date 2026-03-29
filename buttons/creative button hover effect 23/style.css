@@ -1,134 +1,141 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #303030;
+  background: #0c2461;
 }
 
 .container {
+  width: 600px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 150px;
+  justify-content: space-around;
 }
 
-.container a {
+.btn {
   position: relative;
-  padding: 16px 30px;
-  font-size: 1.5em;
-  color: var(--clr);
-  text-shadow: 0 0 15px var(--clr);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: 0.5s;
-  border: 2px solid var(--clr);
+  width: 155px;
+  height: 50px;
+  margin: 20px;
 }
 
-.container a:hover {
-  color: #fff;
-  border: 2px solid transparent;
-  text-shadow: 0 0 0px var(--clr);
-}
-
-.container a:before {
-  content: "";
+.btn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--clr);
-  z-index: -1;
-  transform: scale(0);
+  background: rgba(255, 255, 255, 0.051);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(250, 52, 52, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 10;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
   transition: 0.5s;
+  overflow: hidden;
+  backdrop-filter: blur(15px);
 }
 
-.container a:hover:before {
-  transform: scale(1);
-  transition-delay: 0.5;
-  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 60px var(--clr);
+.btn:hover a {
+  letter-spacing: 3px;
 }
 
-.container a span {
+.btn a:before {
+  content: "";
   position: absolute;
-  background-color: var(--clr);
-  pointer-events: none;
-  box-shadow: 0 0 10px var(--clr), 0 0 20px var(--clr), 0 0 30px var(--clr),
-    0 0 50px var(--clr), 0 0 100px var(--clr);
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.149), transparent);
+  transform: skewX(45deg);
+  transition: 0.5s;
+  transition-delay: 0.5s;
 }
 
-.container a span:nth-child(1),
-.container a span:nth-child(3) {
-  width: 40px;
-  height: 4px;
+a:hover::before {
+  transform: skewX(45deg) translateX(200%);
+  transition-delay: 0s;
 }
 
-.container a span:nth-child(2),
-.container a span:nth-child(4) {
-  width: 4px;
-  height: 40px;
-}
-.container a span:nth-child(1) {
-  top: calc(50% - 2px);
-  left: -50px;
-  transform-origin: left;
-  transition: 0.5s ease-in-out;
-  transition-delay: 0.25s;
-}
-
-.container a:hover span:nth-child(1) {
+.btn:before {
+  content: "";
+  position: absolute;
   left: 50%;
-  transform: scaleX(0);
+  transform: translateX(-50%);
+  background: #ff0461;
+  bottom: -5px;
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
   transition-delay: 0s;
 }
 
-.container a span:nth-child(3) {
-  top: calc(50% - 2px);
-  right: -50px;
-  transform-origin: right;
-  transition: 0.5s ease-in-out;
-  transition-delay: 0.25s;
+.btn:hover::before {
+  bottom: 0px;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
 }
 
-.container a:hover span:nth-child(3) {
-  right: 50%;
-  transform: scaleX(0);
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff0461;
+  top: -5px;
+  width: 30px;
+  height: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
   transition-delay: 0s;
 }
 
-.container a span:nth-child(2) {
-  left: calc(50% - 2px);
-  top: -50px;
-  transform-origin: top;
-  transition: 0.5s ease-in-out;
-  transition-delay: 0.25s;
+.btn:hover::after {
+  top: 0px;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
 }
 
-.container a:hover span:nth-child(2) {
-  top: 50%;
-  transform: scaleY(0);
-  transition-delay: 0s;
+.btn:nth-child(1):before,
+.btn:nth-child(1):after {
+  background: #ff1f72;
+  box-shadow: 0 0 5px #ff1f72, 0 0 15px #ff1f72, 0 0 30px #ff1f72,
+    0 0 60px #ff1f72;
 }
 
-.container a span:nth-child(4) {
-  left: calc(50% - 2px);
-  bottom: -50px;
-  transform-origin: bottom;
-  transition: 0.5s ease-in-out;
-  transition-delay: 0.25s;
+.btn:nth-child(2):before,
+.btn:nth-child(2):after {
+  background: #ff1f72;
+  box-shadow: 0 0 5px #ff1f72, 0 0 15px #ff1f72, 0 0 30px #ff1f72,
+    0 0 60px #ff1f72;
 }
 
-.container a:hover span:nth-child(4) {
-  bottom: 50%;
-  transform: scaleY(0);
-  transition-delay: 0s;
+.btn:nth-child(3):before,
+.btn:nth-child(3):after {
+  background: #ff1f72;
+  box-shadow: 0 0 5px #ff1f72, 0 0 15px #ff1f72, 0 0 30px #ff1f72,
+    0 0 60px #ff1f72;
 }
