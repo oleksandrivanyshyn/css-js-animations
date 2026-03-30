@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #222;
+}
+
+.menu {
+    display: flex;
+    gap: 6px;
+}
+
+.menu .user {
+    position: relative;
+    background: #fff;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+}
+
+.menu .imgBx {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.menu .user .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu .user .details h3 {
+    font-weight: 600;
+    line-height: 1.1em;
+}
+
+.menu .user .details p {
+    font-weight: 500;
+    font-size: 0.8em;
+    color: rgba(0,0,0,0.6);
+}
+
+.navigation {
+    position: relative;
+    width: 40px;
+    height: 70px;
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #222;
+    border-radius: 50%;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 5px;
+}
+
+.navigation span:nth-child(1) {
+    transform: translateY(-12px);
+}
+.navigation span:nth-child(3) {
+    transform: translateY(12px);
+}
+
+.navigation.active {
+    width: 200px;
+}
+
+.navigation.active span {
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+}
+
+.navigation.active span:nth-child(1) {
+    transform: translateX(-60px);
+}
+.navigation.active span:nth-child(3) {
+    transform: translateX(60px);
+}
+
+.navigation span a {
+    font-size: 0em;
+
+}
+
+.navigation.active a {
+    font-size: 1.25em;
+    color: #fff;
+}
+
+.navigation.active span:hover {
+    background: #273c75;
+}
