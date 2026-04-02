@@ -1,8 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const categories = ['animations', 'buttons', 'cards', 'clip', 'images', 'menu', 'javascript','other cool effects'];
-
+const exclude = ['.DS_Store', '.idea','.git', 'node_modules'];
 let htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +30,11 @@ let htmlContent = `
     <h1>UI and Animations Collection</h1>
     <div class="nav">
 `;
+
+const categories = fs.readdirSync('.', { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name).filter(dir => !exclude.includes(dir));
+
 
 categories.forEach((category, index) => {
     const categoryPath = path.join(__dirname, category);
