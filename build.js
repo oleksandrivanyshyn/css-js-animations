@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const exclude = ['.DS_Store', '.idea','.git', 'node_modules'];
+const exclude = ['.DS_Store', '.idea','.git', 'node_modules', '.vercel', 'vercel'];
 let htmlContent = `
 <!DOCTYPE html>
 <html lang="en">
